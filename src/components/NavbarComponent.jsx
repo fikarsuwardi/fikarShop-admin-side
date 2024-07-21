@@ -17,30 +17,28 @@ export default function NavbarComponent() {
 }
   return (
     <Navbar bg="light" expand="lg">
-      <Container fluid>
-        <Navbar.Brand>FikarShop</Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: "100px" }}
-            navbarScroll
-          >
-            <Nav.Link href="#">
-              <Link to="/">Dashboard</Link>
-            </Nav.Link>
-            <Nav.Link href="#">
-              <Link to="/categories" className="Navbar">Categories</Link>
-            </Nav.Link>
-            <Nav.Link href="#">
-              <Link to="/register">Register Admin</Link>
-            </Nav.Link>
-            <Nav.Link href="#">
-              <Button onClick={(event) => logout(event)}>Sign Out</Button>
-            </Nav.Link>
+    <Container fluid>
+      <Navbar.Brand>FikarShop</Navbar.Brand>
+      <Navbar.Toggle aria-controls="navbarScroll" />
+      <Navbar.Collapse id="navbarScroll" className="justify-content-end">
+          <Nav className="my-2 my-lg-0" navbarScroll>
+            <Nav.Item>
+              <Nav.Link as={Link} to="/">Dashboard</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link as={Link} to="/categories">Categories</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link as={Link} to="/register">Register New Admin</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Button onClick={(event) => logout(event)} variant="outline-danger">
+                Sign Out
+              </Button>
+            </Nav.Item>
           </Nav>
         </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    </Container>
+  </Navbar>
   );
 }

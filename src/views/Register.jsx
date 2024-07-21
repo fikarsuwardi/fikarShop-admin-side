@@ -59,6 +59,7 @@ export default function Register() {
                 <Form.Control
                   type="text"
                   name="username"
+                  placeholder="Enter username"
                   value={username}
                   onChange={(event) => setUsername(event.target.value)}
                 />
